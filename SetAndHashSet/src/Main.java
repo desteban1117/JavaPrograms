@@ -93,5 +93,20 @@ public class Main {
         for (HevenlyBody moon: moons) {
             System.out.println(moon.getName());
         }
+
+        String hola = "hola";
+
+        hola.equals("hola");
+        hola.hashCode();
+
+        temp = new HevenlyBody("Mercury", 88);
+        solarSystem.put(temp.getName(), temp);
+        planets.add(temp);
+
+        System.out.println("==================================");
+        for (HevenlyBody planet: planets) {
+            System.out.println(planet.getName() + " " + planet.getOrbitalPeriod());
+        }
+
     }
 }

@@ -28,4 +28,28 @@ public class HevenlyBody {
     public Set<HevenlyBody> getSatellites() {
         return new HashSet<>(this.satellites);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        System.out.println("obj.getClass() is " + obj.getClass());
+        System.out.println("this.getClass() is " + this.getClass());
+
+        if ((obj == null) || (this.getClass() != obj.getClass())) {
+            return false;
+        }
+
+        String objName = ((HevenlyBody) obj).getName();
+
+        return this.name.equals(objName);
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Hashcode called" + (this.name.hashCode() + 57));
+        return this.name.hashCode() + 57;
+    }
 }
